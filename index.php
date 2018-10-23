@@ -10,7 +10,7 @@
 
 <body>
 <?php require_once 'process.php'; ?>
-  <div class="justify-content-center">
+  <div class="container">
   <form action="process.php" method="POST">
 
     <div class="form-group">
