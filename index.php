@@ -10,6 +10,24 @@
 
 <body>
 <?php require_once 'process.php'; ?>
+<?php 
+  # Connect to the DB
+  $mysqli = new mysqli('localhost', 'root', '', 'crud') or die(mysqli_error($mysqli));
+
+  # Query the DB
+  $result = $mysqli->query("SELECT * FROM data");
+
+  # Print the data
+  pre_r($result->fetch_assoc());
+
+  # A Function to print the data in a readable format
+  function pre_r($array) {
+    echo '<pre>';
+    print_r($array);
+    echo 'pre';
+  }
+?>
+
   <div class="container">
   <form action="process.php" method="POST">
 
