@@ -42,7 +42,7 @@
                 class="btn btn-info">
                 Edit              
               </a>
-              <a href="process.php?edit=<?php echo $row['id']; ?>"
+              <a href="process.php?delete=<?php echo $row['id']; ?>"
                 class="btn btn-danger">
                 Delete              
               </a>
