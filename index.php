@@ -9,7 +9,9 @@
 </head>
 
 <body>
+
 <?php require_once 'process.php'; ?>
+
 <?php 
   # Connect to the DB
   $mysqli = new mysqli('localhost', 'root', '', 'crud') or die(mysqli_error($mysqli));
@@ -18,15 +20,39 @@
   $result = $mysqli->query("SELECT * FROM data");
 
   # Print the data
-  pre_r($result->fetch_assoc());
+  // pre_r($result->fetch_assoc());
 
+  ?>
+
+  <div class="row justify-content-center">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Location</th>
+          <th colspan="2">Action</th>
+        </tr>
+      </thead>
+
+    <?php 
+        while ($row = $result->fetch_assoc()): ?>
+        <tr>
+          <td><?php echo $row['name']; ?></td>
+          <td><?php echo $row['location']; ?></td>
+          <td></td>
+        </tr>
+    <?php endwhile; ?>
+    </table>
+  </div>
+
+<?php   
   # A Function to print the data in a readable format
   function pre_r($array) {
     echo '<pre>';
     print_r($array);
     echo 'pre';
   }
-?>
+  ?>
 
   <div class="container">
   <form action="process.php" method="POST">
