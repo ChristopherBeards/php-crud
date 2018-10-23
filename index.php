@@ -19,30 +19,38 @@
   # Query the DB
   $result = $mysqli->query("SELECT * FROM data");
 
-  # Print the data
-  // pre_r($result->fetch_assoc());
-
   ?>
 
   <div class="row justify-content-center">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Location</th>
-          <th colspan="2">Action</th>
-        </tr>
-      </thead>
+    <div class="container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Location</th>
+            <th colspan="2">Action</th>
+          </tr>
+        </thead>
 
-    <?php 
-        while ($row = $result->fetch_assoc()): ?>
-        <tr>
-          <td><?php echo $row['name']; ?></td>
-          <td><?php echo $row['location']; ?></td>
-          <td></td>
-        </tr>
-    <?php endwhile; ?>
-    </table>
+      <?php 
+          while ($row = $result->fetch_assoc()): ?>
+          <tr>
+            <td><?php echo $row['name']; ?></td>
+            <td><?php echo $row['location']; ?></td>
+            <td>
+              <a href="index.php?edit=<?php echo $row['id']; ?>"
+                class="btn btn-info">
+                Edit              
+              </a>
+              <a href="process.php?edit=<?php echo $row['id']; ?>"
+                class="btn btn-danger">
+                Delete              
+              </a>
+            </td>
+          </tr>
+      <?php endwhile; ?>
+      </table>
+    </div>
   </div>
 
 <?php   
