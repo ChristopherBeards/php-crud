@@ -12,6 +12,10 @@
 
 <?php require_once 'process.php'; ?>
 
+<?php
+  if (isset($_SESSION['message'])) {}
+?>
+
 <?php 
   # Connect to the DB
   $mysqli = new mysqli('localhost', 'root', '', 'crud') or die(mysqli_error($mysqli));
