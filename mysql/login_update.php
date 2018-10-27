@@ -1,17 +1,5 @@
 <?php 
-  // Connect to the database
   include "database.php";
-  
-  // Create a query to fetch the data
-  $query = "SELECT * FROM users";
-
-  // Performs the query on the db
-  $result = mysqli_query($connection, $query);
-
-  if (!$result) {
-    die('Error communicating with the Database!');
-  }
-
 ?>
 
 <!DOCTYPE html>
