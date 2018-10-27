@@ -30,6 +30,19 @@
         echo "<br>";
       ?>
     </p>
+    <h1>Native Math Functions</h1>
+    <?php 
+      // BUILT-IN FUNCTIONS: There are more but this is a basic example
+      echo pow(2, 7); // Calculates to the power of the second parameter
+      echo "<br>";
+      echo rand(1, 1000); // Generates a random number
+      echo "<br>";
+      echo sqrt(100); // Calculates the square root of the given parameter
+      echo "<br>";
+      echo ceil(4.6); // Rounds up to the nearest integer
+      echo "<br>";
+      echo floor(4.6); // Rounds down to the nearest integer
+    ?>
   </div>
 </div>
 </body>
