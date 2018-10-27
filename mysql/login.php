@@ -47,6 +47,6 @@ if (isset($_POST['submit'])) {
       </div>
       <button type="submit" name="submit" class="btn btn-default">Login</button>
     </form>
-    
+
   </body>
 </html>
