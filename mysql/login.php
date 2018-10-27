@@ -4,8 +4,19 @@ if (isset($_POST['submit'])) {
   // Connect to the database
   $connection = mysqli_connect('localhost', 'root', '', 'loginapp');
   
+  // Store data received from form
   $username = $_POST['username'];
   $password = $_POST['password'];
+
+  // Create the insert for the query
+  $query = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
+
+  // Performs the query on the db
+  $result = mysqli_query($connection, $query);
+
+  if (!$result) {
+    die('Error communicating with the Database!');
+  }
 }
 
 ?>
