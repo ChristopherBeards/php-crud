@@ -1,3 +1,7 @@
+<?php 
+require_once 'process.php'; 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,11 +14,15 @@
 
 <body>
 
-<?php require_once 'process.php'; ?>
-
 <?php
-  if (isset($_SESSION['message'])) {}
-?>
+  if (isset($_SESSION['message'])): ?>
+    <div class="alert alert-<?=$_SESSION['msg_type']?>">
+      <?php 
+        echo $_SESSION['message'];
+        unset($_SESSION['message']);
+      ?>
+    </div>
+    <?php endif ?>
 
 <?php 
   # Connect to the DB
@@ -68,19 +76,39 @@
 
   <div class="container">
   <form action="process.php" method="POST">
-
+    <input type="hidden" name="id" value=<?php echo $id; ?>>
     <div class="form-group">
       <label>Name</label>
-      <input type="text" name="name" class="form-control" placeholder="Enter your name">
+      <input 
+      type="text" 
+      name="name" 
+      class="form-control" 
+      placeholder="Enter your name"
+      value="<?php echo $name; ?>">
     </div>
 
     <div class="form-group">
      <label>Location</label>
-      <input type="text" name="location" class="form-control" placeholder="Enter your location">
+      <input 
+      type="text" 
+      name="location" 
+      class="form-control" 
+      placeholder="Enter your location" 
+      value="<?php echo $location; ?>">
     </div>
 
     <div class="form-group">
-      <button type="submit" class="btn btn-primary" name="save">Save</button>
+      <?php if ($update == true): ?>
+      
+        <button type="submit" class="btn btn-info" name="update">Update</button>
+        <button type="submit" class="btn btn-danger" name="cancel">Cancel</button>
+
+      <?php else: ?>
+
+        <button type="submit" class="btn btn-primary" name="save">Save</button>
+
+      <?php endif; ?>
+
     </div>
 
   </form>
