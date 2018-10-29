@@ -1,5 +1,6 @@
 <?php 
   include "database.php";
+  include "functions.php";
 ?>
 
 <!DOCTYPE html>
@@ -13,11 +14,19 @@
   <body>
 
   <div class="container">
-    <?php 
-       while ($row = mysqli_fetch_assoc($result)) { 
-          print_r($row);
-       } 
-    ?>
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <form class="navbar-form navbar-right" role="submit" method="post" action="login.php">
+        <div class="form-group">
+          <input type="text" class="form-control" name="username" placeholder="username">
+          <input type="text" class="form-control" name="password" placeholder="password">
+        </div>
+
+        <select name="id" id="" style="height: 3rem; border-radius: 5px;">
+          <?php showUserData(); ?>
+        </select>
+
+        <button type="submit" name="submit" class="btn btn-primary">Update</button>
+      </form>
   </div>
       
   </body>
