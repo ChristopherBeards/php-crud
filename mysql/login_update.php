@@ -3,6 +3,26 @@
   include "functions.php";
 ?>
 
+<?php 
+  if (isset($_POST['submit'])) {
+    $username = $_POST['submit'];
+    $password = $_POST['password'];
+    $id = $_POST['id'];
+
+    $query = "UPDATE users SET 
+              username = '$username', 
+              password = '$password',
+              WHERE id = $id";
+
+    $result = mysqli_query($connection, $query);
+
+    if (!$result) {
+      die("Query Failed " . mysqli_error($connection));
+    }
+  }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +41,7 @@
           <input type="text" class="form-control" name="password" placeholder="password">
         </div>
 
-        <select name="id" id="" style="height: 3rem; border-radius: 5px;">
+        <select name="id" style="height: 3rem; border-radius: 5px;">
           <?php showUserData(); ?>
         </select>
 
