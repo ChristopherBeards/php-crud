@@ -31,7 +31,7 @@
           <?php showUserData(); ?>
         </select>
 
-        <button type="submit" name="submit" class="btn btn-primary">Delete</button>
+        <button type="submit" name="submit" value="DELETE" class="btn btn-primary">Delete</button>
       </form>
   </div>
       
