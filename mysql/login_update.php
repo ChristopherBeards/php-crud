@@ -5,22 +5,8 @@
 
 <?php 
   if (isset($_POST['submit'])) {
-    $username = $_POST['submit'];
-    $password = $_POST['password'];
-    $id = $_POST['id'];
-
-    $query = "UPDATE users SET 
-              username = '$username', 
-              password = '$password',
-              WHERE id = $id";
-
-    $result = mysqli_query($connection, $query);
-
-    if (!$result) {
-      die("Query Failed " . mysqli_error($connection));
+      updateTable();
     }
-  }
-
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +21,7 @@
 
   <div class="container">
     <div class="collapse navbar-collapse navbar-ex1-collapse">
-      <form class="navbar-form navbar-right" role="submit" method="post" action="login.php">
+      <form class="navbar-form navbar-right" role="submit" method="post" action="login_update.php">
         <div class="form-group">
           <input type="text" class="form-control" name="username" placeholder="username">
           <input type="text" class="form-control" name="password" placeholder="password">
