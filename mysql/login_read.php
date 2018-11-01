@@ -26,8 +26,9 @@
 
   <div class="container">
     <?php 
-       while ($row = mysqli_fetch_assoc($result)) { 
-          print_r($row);
+       while ($row = mysqli_fetch_assoc($result)) {
+         $id = $row['id']; 
+         echo "<h1>$id</h1>";
        } 
     ?>
   </div>
