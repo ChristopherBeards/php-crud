@@ -18,7 +18,6 @@ if (isset($_POST['submit'])) {
     die('Error communicating with the Database!');
   }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -31,22 +30,22 @@ if (isset($_POST['submit'])) {
 
   <title>Login App</title>
 </head>
+
 <body>
+  <div class="navbar navbar-default" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Login App</a>
+    </div>
 
-<nav class="navbar navbar-default" role="navigation">
-  <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header">
-    <a class="navbar-brand" href="#">Login App</a>
-  </div>
-
-  <div class="collapse navbar-collapse navbar-ex1-collapse">
-    <form class="navbar-form navbar-right" role="submit" method="post" action="login.php">
-      <div class="form-group">
-        <input type="text" class="form-control" name="username" placeholder="username">
-        <input type="text" class="form-control" name="password" placeholder="password">
-      </div>
-      <button type="submit" name="submit" class="btn btn-default">Login</button>
-    </form>
-
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <form class="navbar-form navbar-right" role="submit" method="post" action="login.php">
+        <div class="form-group">
+          <input type="text" class="form-control" name="username" placeholder="username">
+          <input type="text" class="form-control" name="password" placeholder="password">
+        </div>
+        <button type="submit" name="submit" class="btn btn-default">Login</button>
+      </form>
+    </div>
   </body>
 </html>

@@ -21,5 +21,4 @@
       echo "<option value='$id'>$id</option>";
     }
   }
-
 ?>
