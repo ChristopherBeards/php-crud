@@ -1,9 +1,6 @@
-<?php 
+<?php include "database.php";
 
 if (isset($_POST['submit'])) {
-  // Connect to the database
-  $connection = mysqli_connect('localhost', 'root', '', 'loginapp');
-  
   // Store data received from form
   $username = $_POST['username'];
   $password = $_POST['password'];
