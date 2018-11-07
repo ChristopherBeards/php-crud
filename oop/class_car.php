@@ -36,7 +36,7 @@ if (class_exists("Car")) {
   $bmw = new Car(); 
 ?>
 
-<h1><?php echo $bmw::Type('BMW'); ?></h1>
+<h1><?php echo $bmw->Type('BMW'); ?></h1>
 
 
 </body>
