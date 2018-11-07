@@ -1,9 +1,14 @@
+<!-- Notes
+If the property belongs to the class, use ::
+
+If the property belongs to an instance of the class, use -> 
+-->
+
 <?php 
 // Defining a class in PHP
 class Car {
-
-  function returnType() {
-    echo "Saab 93";
+  function Type($brand) {
+    echo $brand;
   }
 
 }
@@ -26,7 +31,13 @@ if (class_exists("Car")) {
 </head>
 <body>
 
-<h1><?php echo  Car::returnType(); ?></h1>
+<!-- Instantiate an instance of the car class -->
+<?php 
+  $bmw = new Car(); 
+?>
+
+<h1><?php echo $bmw::Type('BMW'); ?></h1>
+
 
 </body>
 </html>
