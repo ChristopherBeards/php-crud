@@ -46,6 +46,6 @@
   } else {
     // No posts
     echo json_encode(
-      array('meddage' => 'No Posts Found')
+      array('message' => 'No Posts Found')
     );
   }
