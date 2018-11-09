@@ -20,6 +20,7 @@
       $query = 'SELECT
         id,
         name,
+        created_at
       FROM
         ' . $this->table . '
       ORDER BY
